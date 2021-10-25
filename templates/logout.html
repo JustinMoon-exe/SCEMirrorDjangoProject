@@ -1,0 +1,33 @@
+{% extends "base.html"  %}
+
+{% block title %}
+    Blog - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #fdfdfd;
+    }
+
+    .head_text {
+        color: white;
+    }
+
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }
+</style>
+
+    <div class="content">
+        <div class="section-inner clearfix">
+
+        <p>You are logged out. <a href="{% url 'login' %}">Click here</a> to login again.</p>
+
+        </div>
+    </div>
+
+{% endblock %}

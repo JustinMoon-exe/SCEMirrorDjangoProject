@@ -1,0 +1,105 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>GSMST Alumni Association</title>
+        <link rel="shortcut icon" type="image/jpg" href="{% static 'img/favicon.ico' %}"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+        <meta name="google" content="notranslate" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous" />
+    </head>
+
+    <body>
+        <style>
+
+
+        body {
+        font-family: "Roboto", sans-serif;
+        font-size: 17px;
+        background-color: #8b8b8b;
+        height: 95%;
+        }
+
+        .d-inline-block {
+        margin-left: 50px;
+        margin-right: 50px;
+        }
+        .container {
+            width: auto;
+
+        }
+        .body-container {
+        margin-left: 10px;
+        margin-right: 10px;
+        }
+        .shadow {
+            box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+        }
+        .btn-danger {
+            color: #fff;
+            background-color: #f00000;
+            border-color: #dc281e;
+        }
+        .masthead {
+            background: #3398E1;
+            height: auto;
+
+            padding-bottom: 15px;
+            box-shadow: 0 16px 48px #E3E7EB;
+            padding-top: 10px;
+            border-style: solid;
+            border-radius: 3px;
+        }
+    </style>
+        <div class="body-container">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow" style="border: black; border-style: solid; border-radius: 3px; margin-top: 10px; margin-bottom: 5px; background-image: linear-gradient(#b3b3b3,#dcdcdc)" id="mainNav">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'home' %}">GSMST Alumni Association</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item text-black">
+                            <a class="nav-link text-black font-weight-bold" href="/donate">Donate</a>
+                        </li>
+                        <li class="nav-item text-black">
+                            {% if user.is_authenticated %}
+                                <a class="nav-link text-black font-weight-bold" href="/logout">Logout</a>
+                            {% else %}
+                                <a class="nav-link text-black font-weight-bold" href="/login">Login</a>
+                            {% endif %}
+                        </li>
+                        <li class="nav-item text-black">
+                            {% if user.is_authenticated %}
+                            {% else %}
+                                <a class="nav-link text-black font-weight-bold" href="/register">Register</a>
+                            {% endif %}
+                        </li>
+			<li class="nav-item text-black">
+                            {% if user.is_staff %}
+                            
+                                <a class="nav-link text-black font-weight-bold" href="/admin">Admin Panel</a>
+                            {% endif %}
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        {% block content %}
+        {% endblock content %}
+    </div>
+        <!-- Footer -->
+        <footer class="py-3 bg-grey">
+
+            <p class="m-0 text-dark text-center ">Copyright &copy; GSMST Alumni Association</p>
+        </footer>
+    </body>
+</html>

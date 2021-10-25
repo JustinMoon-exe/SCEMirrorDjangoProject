@@ -1,0 +1,29 @@
+{% block right_sidebar %}
+{% load static %}
+<style>
+        .card{
+            box-shadow: 0 16px 48px #E3E7EB;
+        }
+
+</style>
+
+<!-- Sidebar Widgets Column -->
+<div class="col-md-4 float-right ">
+<div class="card my-4">
+        <h5 class="card-header">Forum</h5>
+    <div class="card-body">
+        <p class="card-text"> Interact with your fellow Alumni!</p>
+        <a href="/forum">Forum</a>
+    </div>
+</div>
+<div class="card my-4">
+        <h5 class="card-header">About Us</h5>
+    <div class="card-body">
+        <p class="card-text"> GSMST Alumni are a group of people that continue to aspire to change the world, and leave their mark!</p>
+        <img src="{% static 'img/logo.jpg' %}" alt="GSMST Logo" width="320" height="180">
+    </div>
+</div>
+</div>
+
+
+{% endblock right_sidebar %}
