@@ -101,15 +101,14 @@ WSGI_APPLICATION = 'alumni_site.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'alumniinfo',
-        'USER': 'gsmst',
-        'PASSWORD': 'AliBaba40Thieves!!',
-        'HOST': '127.0.0.1',
-        'PORT': '',
-            }
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'alumni',
+       'USER': 'postgres',
+       'PASSWORD': 'victor1234',
+       'HOST': '127.0.0.1',
+       'PORT': '5432',
+   }
 }
 
 # Password validation
